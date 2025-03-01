@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/a-date-invitation/static/css/main.a390f524.css",
+    "main.js": "/a-date-invitation/static/js/main.e97953cb.js",
+    "static/js/453.51d6ed3d.chunk.js": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js",
+    "index.html": "/a-date-invitation/index.html",
+    "main.a390f524.css.map": "/a-date-invitation/static/css/main.a390f524.css.map",
+    "main.e97953cb.js.map": "/a-date-invitation/static/js/main.e97953cb.js.map",
+    "453.51d6ed3d.chunk.js.map": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a390f524.css",
+    "static/js/main.e97953cb.js"
+  ]
+}
