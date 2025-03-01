@@ -1,70 +1,256 @@
-.App {
+/* Thêm vào đầu hoặc trong phần hiện có của App.css */
+.center-content {
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao viewport */
+  flex-direction: column; /* Căn các phần tử con theo cột */
+}
+
+/* Giữ nguyên các phần còn lại của CSS */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Căn giữa toàn bộ App */
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffafbd, #ffc3a0);
-  padding: 20px;
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  padding: 10px;
+  font-family: 'Quicksand', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.flower-decoration {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background: url('https://img.icons8.com/emoji/48/000000/sparkles.png') no-repeat center;
+  background-size: contain;
+  opacity: 0.6;
+  animation: sparkle 3s infinite ease-in-out;
+}
+
+.flower-1 { top: 10%; left: 10%; animation-delay: 0s; }
+.flower-2 { top: 20%; right: 10%; animation-delay: 1s; }
+.flower-3 { bottom: 15%; left: 20%; animation-delay: 2s; }
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.2); }
 }
 
 .App-header {
   background-color: #fff;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 25px;
+  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.2);
+  max-width: 90%;
+  width: 400px; /* Giới hạn chiều rộng để vừa vặn */
   text-align: center;
-  max-width: 600px;
+  position: relative;
+  z-index: 1;
 }
 
-h1 {
-  color: #ff6f61;
-  font-family: 'Arial', sans-serif;
-  font-size: 2.5em;
-  margin-bottom: 20px;
+.title {
+  font-size: 1.5em;
+  color: #ff85a2;
+  margin-bottom: 10px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3);
 }
 
-.image-container {
-  margin: 20px 0;
-}
-
-.date-image {
-  width: 50%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  object-fit: cover;
+.title::after {
+  content: '💞';
+  margin-left: 8px;
 }
 
 .greeting {
-  font-size: 1.4em;
-  color: #333;
-  margin: 10px 0;
+  font-size: 1em;
+  color: #444;
+  margin: 8px 0;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 500;
+}
+
+.accept-button {
+  background-color: #ff85a2;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9em;
+  cursor: pointer;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+  text-decoration: none; /* Đảm bảo Link trông như button */
+  display: inline-block; /* Đảm bảo button căn giữa */
+}
+
+.accept-button:hover {
+  background-color: #ff6685;
+  transform: scale(1.2) rotate(5deg);
+}
+
+/* Highlight cho 'thứ' */
+.highlight-day {
+  color: #ff85a2;
+  font-weight: 700;
+  background-color: #fff0f5;
+  padding: 2px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Highlight cho 'ngày' */
+.highlight-date {
+  color: #ff6685;
+  font-weight: 700;
+  background-color: #ffe6f0;
+  padding: 2px 6px;
+  border-radius: 5px;
+  display: inline-block;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 .invitation {
-  font-size: 1.3em;
-  color: #555;
+  font-size: 0.9em;
+  color: #666;
   line-height: 1.5;
-  margin: 15px 0;
+  margin: 8px 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
 .signature {
-  font-size: 1.2em;
-  color: #ff6f61;
+  font-size: 0.9em;
+  color: #ff85a2;
   font-style: italic;
+  margin: 10px 0;
+  font-family: 'Quicksand', sans-serif;
 }
 
-@media (max-width: 600px) {
+.signature::before {
+  content: '🌸';
+  margin-right: 5px;
+}
+
+.itinerary {
+  margin: 15px 0;
+  padding: 10px;
+  background: #fff5f7;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.1);
+}
+
+.itinerary-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 3px 6px rgba(255, 182, 193, 0.1);
+  border: 2px dashed #ffccd5;
+}
+
+.itinerary-time {
+  font-size: 0.9em;
+  color: #ff85a2;
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.itinerary-time::after {
+  content: '💫';
+  margin-left: 5px;
+}
+
+.itinerary-content h3 {
+  color: #ff85a2;
+  font-size: 1.1em;
+  margin-bottom: 8px;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 700;
+}
+
+.itinerary-content p {
+  color: #666;
+  font-size: 0.8em;
+  margin-bottom: 8px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.location-image {
+  width: 90%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 3px 6px rgba(255, 182, 193, 0.2);
+  border: 3px solid #ffccd5;
+}
+
+.confirmation {
+  font-size: 0.9em;
+  color: #ff85a2;
+  margin-top: 10px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.confirmation::after {
+  content: '💖✨';
+  margin-left: 5px;
+}
+
+.image-container {
+  margin: 10px 0;
+}
+
+.date-image {
+  width: 70%;
+  max-width: 250px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2);
+  border: 3px solid #ff85a2;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
   .App-header {
-    padding: 20px;
+    max-width: 800px;
+    padding: 30px;
   }
 
-  h1 {
-    font-size: 2em;
+  .title {
+    font-size: 2.5em;
   }
 
-  .date-image {
-    width: 70%;
+  .date-image, .location-image {
+    max-width: 300px;
+  }
+
+  .greeting, .invitation, .signature {
+    font-size: 1.2em;
+  }
+
+  .itinerary-content h3 {
+    font-size: 1.3em;
+  }
+
+  .itinerary-content p {
+    font-size: 1em;
+  }
+
+  .accept-button {
+    font-size: 1.1em;
   }
 }

@@ -1,21 +1,19 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import './App.css';
-import Pong from './Pong.jpg';
+import InvitationPage from './InvitationPage'; // Trang thư mời hiện tại
+import HomePage from './HomePage'; // Trang khởi đầu mới
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>A Special Date Invitation</h1>
-        <div className="image-container">
-          <img src={Pong} alt="Couple" className="date-image" />
-        </div>
-        <p className="greeting">Hey Võ Ngọc Hoa,</p>
-        <p className="invitation">
-          Would you like to go on a date with me this weekend? Maybe dinner and a movie? Let me know! 💕
-        </p>
-        <p className="signature">Love, [Tên bạn]</p>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/a-date-invitation" element={<HomePage />} />
+          <Route path="/invitation" element={<InvitationPage />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
