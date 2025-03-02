@@ -1,27 +1,29 @@
-/* Thêm vào đầu hoặc trong phần hiện có của App.css */
+/* Import Google Fonts for Quicksand font, supporting Vietnamese characters */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
+
+/* Center the content vertically and horizontally on the screen */
 .center-content {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh; /* Đảm bảo chiều cao tối thiểu bằng chiều cao viewport */
-  flex-direction: column; /* Căn các phần tử con theo cột */
+  min-height: 100vh; /* Ensure minimum height matches viewport height */
+  flex-direction: column; /* Stack children vertically */
 }
 
-/* Giữ nguyên các phần còn lại của CSS */
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;700&display=swap');
-
+/* Main App styling with pink gradient background */
 .App {
   display: flex;
   justify-content: center;
-  align-items: center; /* Căn giữa toàn bộ App */
+  align-items: center;
   min-height: 100vh;
-  background: linear-gradient(135deg, #ffe6f0, #fff0f5);
+  background: linear-gradient(135deg, #ffe6f0, #fff0f5); /* Pink gradient background */
   padding: 10px;
-  font-family: 'Quicksand', sans-serif;
+  font-family: 'Quicksand', sans-serif; /* Use Quicksand font for cuteness and Vietnamese support */
   position: relative;
   overflow: hidden;
 }
 
+/* Flower decorations with sparkle animation */
 .flower-decoration {
   position: absolute;
   width: 50px;
@@ -41,25 +43,27 @@
   50% { opacity: 0.8; transform: scale(1.2); }
 }
 
+/* Header styling for the invitation card */
 .App-header {
   background-color: #fff;
   padding: 15px;
-  border-radius: 25px;
-  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.2);
+  border-radius: 25px; /* Cute rounded corners */
+  box-shadow: 0 8px 16px rgba(255, 182, 193, 0.2); /* Soft pink shadow */
   max-width: 90%;
-  width: 400px; /* Giới hạn chiều rộng để vừa vặn */
+  width: 400px; /* Fixed width for a compact, centered look */
   text-align: center;
   position: relative;
   z-index: 1;
 }
 
+/* Title styling with pink color and heart emoji */
 .title {
   font-size: 1.5em;
-  color: #ff85a2;
+  color: #ff85a2; /* Bright pink for romance */
   margin-bottom: 10px;
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3);
+  text-shadow: 1px 1px 2px rgba(255, 182, 193, 0.3); /* Soft shadow for depth */
 }
 
 .title::after {
@@ -67,6 +71,7 @@
   margin-left: 8px;
 }
 
+/* Greeting text styling */
 .greeting {
   font-size: 1em;
   color: #444;
@@ -75,28 +80,30 @@
   font-weight: 500;
 }
 
+/* Accept button styling (used for both "Đồng ý" and "Xem ngay") */
 .accept-button {
   background-color: #ff85a2;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 20px;
+  border-radius: 20px; /* Rounded corners for cuteness */
   font-size: 0.9em;
   cursor: pointer;
   margin-top: 10px;
-  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+  box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3); /* Pink shadow for depth */
   font-family: 'Quicksand', sans-serif;
   font-weight: 700;
-  text-decoration: none; /* Đảm bảo Link trông như button */
-  display: inline-block; /* Đảm bảo button căn giữa */
+  text-decoration: none; /* Ensure Link looks like a button */
+  display: inline-block; /* Center the button */
+  transition: all 0.3s ease; /* Smooth transition for hover effects */
 }
 
 .accept-button:hover {
-  background-color: #ff6685;
-  transform: scale(1.2) rotate(5deg);
+  background-color: #ff6685; /* Darker pink on hover */
+  transform: scale(1.2) rotate(5deg); /* Cute scale and rotate animation */
 }
 
-/* Highlight cho 'thứ' */
+/* Highlight for 'thứ' in the invitation text */
 .highlight-day {
   color: #ff85a2;
   font-weight: 700;
@@ -107,7 +114,7 @@
   animation: pulse 1.5s infinite ease-in-out;
 }
 
-/* Highlight cho 'ngày' */
+/* Highlight for 'ngày' in the invitation text */
 .highlight-date {
   color: #ff6685;
   font-weight: 700;
@@ -123,6 +130,7 @@
   50% { transform: scale(1.05); }
 }
 
+/* Invitation text styling */
 .invitation {
   font-size: 0.9em;
   color: #666;
@@ -131,6 +139,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+/* Signature styling with flower emoji */
 .signature {
   font-size: 0.9em;
   color: #ff85a2;
@@ -144,29 +153,42 @@
   margin-right: 5px;
 }
 
+/* Itinerary container styling */
 .itinerary {
   margin: 15px 0;
   padding: 10px;
-  background: #fff5f7;
+  background: #fff5f7; /* Light pink background */
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(255, 182, 193, 0.1);
 }
 
+/* Itinerary item styling with clickable behavior */
 .itinerary-item {
+  cursor: pointer; /* Indicate clickable items */
   margin-bottom: 15px;
   padding: 10px;
   border-radius: 15px;
   background: #fff;
   box-shadow: 0 3px 6px rgba(255, 182, 193, 0.1);
-  border: 2px dashed #ffccd5;
+  border: 2px dashed #ffccd5; /* Dashed pink border for cuteness */
+  transition: all 0.3s ease; /* Smooth transition for hover/click */
 }
 
+.itinerary-item:hover {
+  background-color: #fff5f7; /* Lighter pink on hover */
+  box-shadow: 0 5px 10px rgba(255, 182, 193, 0.3); /* Enhanced shadow on hover */
+}
+
+/* Itinerary time styling with star emoji */
 .itinerary-time {
   font-size: 0.9em;
   color: #ff85a2;
   font-weight: bold;
   margin-bottom: 8px;
   font-family: 'Quicksand', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Center arrows vertically */
 }
 
 .itinerary-time::after {
@@ -174,6 +196,7 @@
   margin-left: 5px;
 }
 
+/* Itinerary content (details) styling */
 .itinerary-content h3 {
   color: #ff85a2;
   font-size: 1.1em;
@@ -189,6 +212,7 @@
   font-family: 'Quicksand', sans-serif;
 }
 
+/* Location image styling */
 .location-image {
   width: 90%;
   max-width: 200px;
@@ -196,8 +220,14 @@
   border-radius: 15px;
   box-shadow: 0 3px 6px rgba(255, 182, 193, 0.2);
   border: 3px solid #ffccd5;
+  transition: transform 0.3s ease; /* Smooth scale on hover */
 }
 
+.location-image:hover {
+  transform: scale(1.1) rotate(2deg); /* Cute scale and rotate on hover */
+}
+
+/* Confirmation message styling */
 .confirmation {
   font-size: 0.9em;
   color: #ff85a2;
@@ -210,6 +240,7 @@
   margin-left: 5px;
 }
 
+/* Image container for the main couple image */
 .image-container {
   margin: 10px 0;
 }
@@ -221,9 +252,14 @@
   border-radius: 20px;
   box-shadow: 0 4px 8px rgba(255, 182, 193, 0.2);
   border: 3px solid #ff85a2;
+  transition: transform 0.3s ease; /* Smooth scale on hover */
 }
 
-/* Responsive Design */
+.date-image:hover {
+  transform: scale(1.1) rotate(2deg); /* Cute scale and rotate on hover */
+}
+
+/* Responsive Design for larger screens */
 @media (min-width: 768px) {
   .App-header {
     max-width: 800px;
