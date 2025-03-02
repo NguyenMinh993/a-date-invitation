@@ -1,19 +1,18 @@
 {
   "files": {
-    "main.css": "/a-date-invitation/static/css/main.52ddbdad.css",
-    "main.js": "/a-date-invitation/static/js/main.1a22c1c5.js",
+    "main.css": "/a-date-invitation/static/css/main.6dae3fd4.css",
+    "main.js": "/a-date-invitation/static/js/main.3e03848f.js",
     "static/js/453.51d6ed3d.chunk.js": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js",
     "static/media/Pong.jpg": "/a-date-invitation/static/media/Pong.b1d93443b7ce03197641.jpg",
-    "static/media/tiramisu.jpg": "/a-date-invitation/static/media/tiramisu.df17474998431b8ac462.jpg",
     "static/media/NinhKieu.jpg": "/a-date-invitation/static/media/NinhKieu.55291d271ea4e5cd3341.jpg",
     "static/media/clam.png": "/a-date-invitation/static/media/clam.accda2853bc8814884dc.png",
     "index.html": "/a-date-invitation/index.html",
-    "main.52ddbdad.css.map": "/a-date-invitation/static/css/main.52ddbdad.css.map",
-    "main.1a22c1c5.js.map": "/a-date-invitation/static/js/main.1a22c1c5.js.map",
+    "main.6dae3fd4.css.map": "/a-date-invitation/static/css/main.6dae3fd4.css.map",
+    "main.3e03848f.js.map": "/a-date-invitation/static/js/main.3e03848f.js.map",
     "453.51d6ed3d.chunk.js.map": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.52ddbdad.css",
-    "static/js/main.1a22c1c5.js"
+    "static/css/main.6dae3fd4.css",
+    "static/js/main.3e03848f.js"
   ]
 }
