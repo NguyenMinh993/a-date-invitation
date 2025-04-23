@@ -1,26 +1,76 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 import Pong from './Pong.jpg';
 import Clam from './clam.png';
 import emailjs from '@emailjs/browser';
 import NinhKieu from './NinhKieu.jpg';
 import { motion, AnimatePresence } from 'framer-motion';
+import audioFile from './Shiki - 1000 Ánh Mắt ft. Obito (Official Music Video).mp3';
+import FallingFlowers from './FallingFlowers';
 
 function InvitationPage() {
   const [isPlanInteracted, setIsPlanInteracted] = useState(false); // Track if all items are expanded
   const [isSubmitted, setIsSubmitted] = useState(false); // Track if email is sent
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [confetti, setConfetti] = useState([]);
   const [expandedItems, setExpandedItems] = useState({
     item1: false, // For 18:00 - 19:00 (Clam Izakaya Sushi)
     item2: false, // For 19:30 - 20:00 (Ninh Kiều)
   });
 
+  const audioRef = React.useRef(null);
+
+  useEffect(() => {
+    audioRef.current = new Audio(audioFile);
+    audioRef.current.loop = true;
+    audioRef.current.volume = 0.5; // Set volume to 50%
+
+    return () => {
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current = null;
+      }
+    };
+  }, []);
+
+  const toggleMusic = () => {
+    if (isPlaying) {
+      audioRef.current.pause();
+      setIsPlaying(false);
+    } else {
+      audioRef.current.play()
+        .then(() => {
+          console.log('Audio started playing successfully');
+          setIsPlaying(true);
+        })
+        .catch(error => {
+          console.error('Error playing audio:', error);
+          console.log('Audio file path:', audioFile);
+          console.log('Audio element:', audioRef.current);
+          alert('Không thể phát nhạc. Vui lòng kiểm tra lại file nhạc. Chi tiết lỗi: ' + error.message);
+        });
+    }
+  };
+
+  const createConfetti = () => {
+    const newConfetti = Array.from({ length: 50 }, (_, i) => ({
+      id: Date.now() + i,
+      left: Math.random() * 100,
+      delay: Math.random() * 2,
+      color: `hsl(${Math.random() * 60 + 330}, 100%, 50%)`,
+    }));
+    setConfetti(newConfetti);
+  };
+
   emailjs.init('pScm0k2yToKA-hQnu');
 
   const handleAccept = (e) => {
     e.preventDefault();
+    createConfetti();
+    
     const templateParams = {
       to_email: 'nguyenminh090903@gmail.com',
-      message: 'Võ Ngọc Hoa (Pé Pôngiuoi) đã đồng ý đi hẹn hò với Nguyễn Minh vào thứ Ba, ngày 4/3/2025!',
+      message: 'Võ Ngọc Hoa (Pé Pôngiuoi) đã đồng ý đi hẹn hò với Nguyễn Minh vào thứ Ba, ngày 26/4/2025!',
     };
 
     emailjs
@@ -83,6 +133,48 @@ function InvitationPage() {
 
   return (
     <div className="App">
+      <FallingFlowers />
+      {/* Confetti animation */}
+      <AnimatePresence>
+        {confetti.map((piece) => (
+          <motion.div
+            key={piece.id}
+            className="confetti"
+            style={{
+              left: `${piece.left}%`,
+              backgroundColor: piece.color,
+              animationDelay: `${piece.delay}s`,
+            }}
+            initial={{ opacity: 0, y: '100vh' }}
+            animate={{ opacity: 0.8, y: '-100vh' }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 3, ease: 'linear' }}
+          />
+        ))}
+      </AnimatePresence>
+
+      {/* Enhanced music player */}
+      <div className="music-player">
+        <button onClick={toggleMusic} className="music-button">
+          {isPlaying ? '🔊' : '🔈'}
+        </button>
+        <span className="music-label">Nhạc nền</span>
+        <div className="volume-control">
+          <input
+            type="range"
+            min="0"
+            max="1"
+            step="0.1"
+            defaultValue="0.5"
+            onChange={(e) => {
+              if (audioRef.current) {
+                audioRef.current.volume = e.target.value;
+              }
+            }}
+          />
+        </div>
+      </div>
+
       <header className="App-header">
         <motion.h1
           className="title"
