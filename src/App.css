@@ -58,10 +58,22 @@
 /* Enhanced title styling */
 .title {
   font-size: 2.5rem;
-  color: #2c3e50;
   margin-bottom: 30px;
   font-weight: 700;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  color: #ff85a2; /* Set default pink color */
+}
+
+.title .main-title {
+  color: #ff85a2;
+  font-weight: 800;
+}
+
+/* Add styles to prevent quotes from breaking */
+.title span.quote {
+  white-space: nowrap;
+  display: inline-block;
+  color: #ff85a2; /* Same pink color for quoted text */
 }
 
 .title::after {
@@ -235,24 +247,26 @@
   color: #34495e;
   margin: 20px 0;
   font-weight: 500;
+  text-align: center;
 }
 
-/* Highlight for 'thứ' in the invitation text */
-.highlight-day {
+.greeting .nickname {
+  display: block;
+  font-size: 1.2rem;
+  color: #ff85a2;
+  margin-top: 5px;
+  font-style: italic;
+}
+
+/* Highlight for 'thứ' and 'ngày' in the invitation text */
+.highlight-day, .highlight-date {
   color: #ff6b8b;
   font-weight: 600;
   background: rgba(255, 255, 255, 0.3);
   padding: 2px 8px;
   border-radius: 5px;
-}
-
-/* Highlight for 'ngày' in the invitation text */
-.highlight-date {
-  color: #ff6b8b;
-  font-weight: 600;
-  background: rgba(255, 255, 255, 0.3);
-  padding: 2px 8px;
-  border-radius: 5px;
+  display: inline-block;
+  white-space: nowrap;
 }
 
 /* Invitation text styling */
@@ -260,8 +274,15 @@
   font-size: 1.2rem;
   color: #2c3e50;
   line-height: 1.6;
-  margin: 30px 0;
+  margin: 30px auto;
   padding: 0 20px;
+  text-align: left;
+  max-width: 600px;
+}
+
+.invitation .date-line {
+  display: inline-block;
+  margin: 15px 0;
 }
 
 /* Signature styling with flower emoji */
@@ -349,14 +370,35 @@
   
   .title {
     font-size: 2rem;
+    line-height: 1.4;
+  }
+  
+  .title span.quote {
+    font-size: 1.8rem; /* Slightly smaller on mobile */
+    display: block; /* Force to new line on mobile */
+    margin-top: 10px;
   }
   
   .greeting {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+  }
+  
+  .greeting .nickname {
+    font-size: 1.1rem;
   }
   
   .invitation {
     font-size: 1rem;
+    padding: 0 15px;
+  }
+  
+  .invitation .date-line {
+    margin: 10px 0;
+  }
+  
+  .highlight-day, .highlight-date {
+    padding: 2px 5px;
+    font-size: 0.95rem;
   }
   
   .itinerary-time {
@@ -459,4 +501,417 @@
 @keyframes sparkle {
   0%, 100% { opacity: 0.5; transform: translate(-50%, -50%) scale(1); }
   50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.5); }
+}
+
+/* Audio notification styling */
+.audio-notification {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  padding: 10px 20px;
+  border-radius: 30px;
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.2);
+  z-index: 1000;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.audio-notification p {
+  margin: 0;
+  color: #ff6b8b;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.letter-container {
+  perspective: 1000px;
+  margin: 2rem 0;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 20px;
+}
+
+.letter-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  width: 100%;
+}
+
+.letter {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 70%;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform-style: preserve-3d;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+  border: 1px solid #e0e0e0;
+  overflow: hidden;
+}
+
+.letter-fold {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(135deg, #f5f5f5 0%, #e0e0e0 100%);
+  transform-origin: top;
+  transform: rotateX(10deg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.letter-content {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  font-family: 'Dancing Script', cursive;
+  color: #333;
+  font-size: clamp(1rem, 3vw, 1.5rem);
+  line-height: 1.6;
+  z-index: 1;
+}
+
+.letter-seal {
+  position: absolute;
+  top: 10%;
+  right: 10%;
+  background: #fff;
+  width: clamp(30px, 8vw, 50px);
+  height: clamp(30px, 8vw, 50px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  transform: rotate(-15deg);
+  z-index: 2;
+}
+
+.open-note {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  color: #666;
+  font-style: italic;
+  text-align: center;
+  width: 100%;
+  padding: 0 20px;
+}
+
+.letter:hover {
+  transform: translateY(-5px) rotate(2deg);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.letter:hover .letter-fold {
+  transform: rotateX(15deg);
+}
+
+.letter:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .letter-container {
+    max-width: 300px;
+  }
+  
+  .letter-content {
+    padding: 15px;
+  }
+  
+  .letter-seal {
+    top: 5%;
+    right: 5%;
+  }
+}
+
+@media (max-width: 480px) {
+  .letter-container {
+    max-width: 250px;
+  }
+  
+  .letter-content {
+    padding: 10px;
+  }
+  
+  .open-note {
+    font-size: 0.9rem;
+  }
+}
+
+.message-container {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  margin: 0 auto;
+}
+
+.message-header {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.message-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.message-bubble {
+  position: relative;
+  background: #f0f0f0;
+  border-radius: 18px;
+  padding: 15px 20px;
+  margin: 10px 0;
+  max-width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.message-content {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #333;
+}
+
+.message-content p {
+  margin: 5px 0;
+}
+
+.message-heart {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font-size: 1.2rem;
+  background: white;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tap-hint {
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+  margin-top: 8px;
+  font-style: italic;
+}
+
+@media (max-width: 480px) {
+  .message-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  .message-header {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+
+  .message-content {
+    font-size: 1rem;
+  }
+
+  .message-heart {
+    width: 20px;
+    height: 20px;
+    font-size: 1rem;
+  }
+}
+
+/* Photo booth options styling */
+.photo-booth-options {
+  display: flex;
+  justify-content: space-around;
+  gap: 30px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+  padding: 0 20px;
+}
+
+.photo-booth-option {
+  flex: 1;
+  min-width: 200px;
+  max-width: 300px; /* Set maximum width */
+  text-align: center;
+}
+
+.photo-booth-option h4 {
+  color: #ff85a2;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  font-weight: 600;
+}
+
+.photo-booth-option a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  aspect-ratio: 1; /* Make container square */
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+}
+
+.photo-booth-option img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Cover the square container */
+  border-radius: 15px;
+  transition: all 0.3s ease;
+}
+
+.photo-booth-option img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 182, 193, 0.4);
+}
+
+@media (max-width: 768px) {
+  .photo-booth-options {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .photo-booth-option {
+    width: 100%;
+    max-width: 250px; /* Slightly smaller on mobile */
+  }
+}
+
+/* Image carousel styling */
+.image-carousel {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  height: 500px; /* Fixed height */
+  margin: 20px auto;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+  background-color: rgba(255, 255, 255, 0.9); /* Light background for better visibility */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image-carousel .date-image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain; /* Show full image without cropping */
+  display: block;
+  border-radius: 20px;
+  transition: transform 0.3s ease;
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 10;
+}
+
+.carousel-button {
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #ff85a2;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-button:hover {
+  background: rgba(255, 255, 255, 1);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.carousel-dots {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.carousel-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.carousel-dot.active {
+  background: #ff85a2;
+  transform: scale(1.2);
+}
+
+.carousel-dot:hover {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 768px) {
+  .image-carousel {
+    max-width: 90%;
+    height: 400px; /* Slightly smaller height on mobile */
+  }
+  
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .carousel-dot {
+    width: 8px;
+    height: 8px;
+  }
 }

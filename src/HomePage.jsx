@@ -26,14 +26,10 @@ function HomePage() {
     return () => clearInterval(interval);
   }, []);
 
-  const fadeIn = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.8, ease: 'easeOut' } },
-  };
-
-  const bounce = {
-    hidden: { scale: 0 },
-    visible: { scale: 1, transition: { duration: 0.6, type: 'spring', bounce: 0.5 } },
+  const messageAnimation = {
+    initial: { scale: 0.8, opacity: 0, y: 20 },
+    animate: { scale: 1, opacity: 1, y: 0 },
+    hover: { scale: 1.02 }
   };
 
   return (
@@ -58,35 +54,34 @@ function HomePage() {
       ))}
 
       <div className="center-content">
-        <header className="App-header">
-          <motion.h1
-            className="title"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-            whileHover={{ scale: 1.05 }}
+        <div className="message-container">
+          <motion.div 
+            className="message-header"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
             Thư mời 💌
-          </motion.h1>
-          <motion.p
-            className="greeting"
-            initial="hidden"
-            animate="visible"
-            variants={fadeIn}
-          >
-            Pé Pôngiuoi ơi, có thư mời cho em nè! 🌸
-          </motion.p>
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={bounce}
-            whileHover={{ scale: 1.1, rotate: 5 }}
-          >
-            <Link to="/invitation" className="accept-button">
-              Xem ngay 🌷
-            </Link>
           </motion.div>
-        </header>
+          
+          <Link to="/invitation" className="message-link">
+            <motion.div
+              className="message-bubble"
+              initial="initial"
+              animate="animate"
+              whileHover="hover"
+              variants={messageAnimation}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="message-content">
+                <p>Pé Pôngiuoi ơi,</p>
+                <p>Có thư mời cho em nè!</p>
+              </div>
+              <div className="message-heart">❤️</div>
+              <div className="tap-hint">Nhấn để mở thư</div>
+            </motion.div>
+          </Link>
+        </div>
       </div>
     </div>
   );
