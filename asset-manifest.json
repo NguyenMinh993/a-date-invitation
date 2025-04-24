@@ -1,19 +1,29 @@
 {
   "files": {
-    "main.css": "/a-date-invitation/static/css/main.711ee496.css",
-    "main.js": "/a-date-invitation/static/js/main.4d5e55e8.js",
+    "main.css": "/a-date-invitation/static/css/main.1aa1f464.css",
+    "main.js": "/a-date-invitation/static/js/main.1dc1a480.js",
     "static/js/453.51d6ed3d.chunk.js": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js",
     "static/media/Shiki - 1000 Ánh Mắt ft. Obito (Official Music Video).mp3": "/a-date-invitation/static/media/Shiki - 1000 Ánh Mắt ft. Obito (Official Music Video).b312fe6d969175bd7e34.mp3",
-    "static/media/Pong.jpg": "/a-date-invitation/static/media/Pong.b1d93443b7ce03197641.jpg",
-    "static/media/NinhKieu.jpg": "/a-date-invitation/static/media/NinhKieu.55291d271ea4e5cd3341.jpg",
+    "static/media/8.jpg": "/a-date-invitation/static/media/8.e1edd0fcf1df80d6c643.jpg",
+    "static/media/2.jpg": "/a-date-invitation/static/media/2.75e76e1e65599b1d13cb.jpg",
+    "static/media/9.jpg": "/a-date-invitation/static/media/9.31099161989804f5e2f7.jpg",
+    "static/media/7.jpg": "/a-date-invitation/static/media/7.857d0ed74f592e1c40af.jpg",
+    "static/media/3.jpg": "/a-date-invitation/static/media/3.79716fedfc311e0926db.jpg",
+    "static/media/photTime.jpg": "/a-date-invitation/static/media/photTime.26b726bc9d10c00a3b17.jpg",
+    "static/media/6.jpg": "/a-date-invitation/static/media/6.cb3a739902f1b8a35eba.jpg",
+    "static/media/4.jpg": "/a-date-invitation/static/media/4.af14c738e860c1eb11ac.jpg",
+    "static/media/cvNamLong.jpg": "/a-date-invitation/static/media/cvNamLong.0122935a2cbabd6eb4ae.jpg",
+    "static/media/5.jpg": "/a-date-invitation/static/media/5.333e47adf964790c78b5.jpg",
+    "static/media/1.jpg": "/a-date-invitation/static/media/1.ee664275bfe265be2634.jpg",
+    "static/media/photoObject.jpg": "/a-date-invitation/static/media/photoObject.d74beba359a097adcd79.jpg",
     "static/media/clam.png": "/a-date-invitation/static/media/clam.accda2853bc8814884dc.png",
     "index.html": "/a-date-invitation/index.html",
-    "main.711ee496.css.map": "/a-date-invitation/static/css/main.711ee496.css.map",
-    "main.4d5e55e8.js.map": "/a-date-invitation/static/js/main.4d5e55e8.js.map",
+    "main.1aa1f464.css.map": "/a-date-invitation/static/css/main.1aa1f464.css.map",
+    "main.1dc1a480.js.map": "/a-date-invitation/static/js/main.1dc1a480.js.map",
     "453.51d6ed3d.chunk.js.map": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.711ee496.css",
-    "static/js/main.4d5e55e8.js"
+    "static/css/main.1aa1f464.css",
+    "static/js/main.1dc1a480.js"
   ]
 }
