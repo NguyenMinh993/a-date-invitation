@@ -1,29 +1,23 @@
 {
   "files": {
-    "main.css": "/a-date-invitation/static/css/main.1aa1f464.css",
-    "main.js": "/a-date-invitation/static/js/main.1dc1a480.js",
+    "main.css": "/a-date-invitation/static/css/main.b18e1731.css",
+    "main.js": "/a-date-invitation/static/js/main.818e575f.js",
     "static/js/453.51d6ed3d.chunk.js": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js",
+    "static/media/ok.mp3": "/a-date-invitation/static/media/ok.be91cbdb2ceda4961f83.mp3",
     "static/media/Shiki - 1000 Ánh Mắt ft. Obito (Official Music Video).mp3": "/a-date-invitation/static/media/Shiki - 1000 Ánh Mắt ft. Obito (Official Music Video).b312fe6d969175bd7e34.mp3",
-    "static/media/8.jpg": "/a-date-invitation/static/media/8.e1edd0fcf1df80d6c643.jpg",
-    "static/media/2.jpg": "/a-date-invitation/static/media/2.75e76e1e65599b1d13cb.jpg",
-    "static/media/9.jpg": "/a-date-invitation/static/media/9.31099161989804f5e2f7.jpg",
-    "static/media/7.jpg": "/a-date-invitation/static/media/7.857d0ed74f592e1c40af.jpg",
-    "static/media/3.jpg": "/a-date-invitation/static/media/3.79716fedfc311e0926db.jpg",
-    "static/media/photTime.jpg": "/a-date-invitation/static/media/photTime.26b726bc9d10c00a3b17.jpg",
-    "static/media/6.jpg": "/a-date-invitation/static/media/6.cb3a739902f1b8a35eba.jpg",
-    "static/media/4.jpg": "/a-date-invitation/static/media/4.af14c738e860c1eb11ac.jpg",
-    "static/media/cvNamLong.jpg": "/a-date-invitation/static/media/cvNamLong.0122935a2cbabd6eb4ae.jpg",
-    "static/media/5.jpg": "/a-date-invitation/static/media/5.333e47adf964790c78b5.jpg",
-    "static/media/1.jpg": "/a-date-invitation/static/media/1.ee664275bfe265be2634.jpg",
-    "static/media/photoObject.jpg": "/a-date-invitation/static/media/photoObject.d74beba359a097adcd79.jpg",
-    "static/media/clam.png": "/a-date-invitation/static/media/clam.accda2853bc8814884dc.png",
+    "static/media/ty11.mp4": "/a-date-invitation/static/media/ty11.90ffd9647b58f70e5389.mp4",
+    "static/media/ty3.jpg": "/a-date-invitation/static/media/ty3.378309adb0e9527c7f2f.jpg",
+    "static/media/ty2.jpg": "/a-date-invitation/static/media/ty2.d55a348f0590094c95a7.jpg",
+    "static/media/ty13.mp4": "/a-date-invitation/static/media/ty13.98061c2e021c987d0cfa.mp4",
+    "static/media/ty12.mp4": "/a-date-invitation/static/media/ty12.bba045a0fca7792bc638.mp4",
+    "static/media/ty1.jpg": "/a-date-invitation/static/media/ty1.20aeca326de37e862f1b.jpg",
     "index.html": "/a-date-invitation/index.html",
-    "main.1aa1f464.css.map": "/a-date-invitation/static/css/main.1aa1f464.css.map",
-    "main.1dc1a480.js.map": "/a-date-invitation/static/js/main.1dc1a480.js.map",
+    "main.b18e1731.css.map": "/a-date-invitation/static/css/main.b18e1731.css.map",
+    "main.818e575f.js.map": "/a-date-invitation/static/js/main.818e575f.js.map",
     "453.51d6ed3d.chunk.js.map": "/a-date-invitation/static/js/453.51d6ed3d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1aa1f464.css",
-    "static/js/main.1dc1a480.js"
+    "static/css/main.b18e1731.css",
+    "static/js/main.818e575f.js"
   ]
 }
